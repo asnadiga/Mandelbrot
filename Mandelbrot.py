@@ -61,11 +61,10 @@ class Mandelbrot:
         self.curArray = self.curArray + trans
         
         
-    def zoom(self,zoomAmt):
-        #self.minX *= 1/zoomAmt
-        #self.minY *= 1/zoomAmt
-        #self.maxX *= 1/zoomAmt
-        #self.maxY *= 1/zoomAmt
+    def zoom(self,zoomAmt, zoomCenter):
+        self.curArray = ((self.curArray-zoomCenter)*(1/zoomAmt))+zoomCenter
+        self.minX = self.curArray[0][0].real
+        self.maxX = self.curArray[self.curArray.shape[0]-1][self.curArray.shape[1]-1].real
+        self.minY = self.curArray[self.curArray.shape[0]-1][self.curArray.shape[1]-1].imag
+        self.maxY = self.curArray[0][0].imag
         
-        middle = complex((self.maxX+self.minX)/2, (self.maxY+self.minY)/2)
-        self.curArray = ((self.curArray-middle)*(1/zoomAmt))+middle

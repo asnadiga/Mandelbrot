@@ -86,9 +86,6 @@ class Application(tk.Frame):
             self.curMouseX = event.x
             self.curMouseY = event.y
     
-    def test(self, event):
-        print("click up:  ", self.fractal.curArray[event.x][event.y])
-
     
     def update_iterations(self):
         self.fractal.MAXITERATIONS = int(self.iterEnt.get())

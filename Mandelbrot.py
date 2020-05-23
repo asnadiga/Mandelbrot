@@ -5,9 +5,6 @@ Created on May 15, 2020
 '''
 import numpy as np
 import numexpr as ne
-import time
-import matplotlib.pyplot as plt
-
 
 class Mandelbrot:
 

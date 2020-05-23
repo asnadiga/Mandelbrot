@@ -5,9 +5,6 @@ Created on May 19, 2020
 '''
 from Mandelbrot import Mandelbrot
 import numpy as np
-import numexpr as ne
-import time
-import matplotlib.pyplot as plt
 from PIL import Image, ImageTk
 import tkinter as tk
 
@@ -88,7 +85,6 @@ class Application(tk.Frame):
         if self.singleClick:
             self.curMouseX = event.x
             self.curMouseY = event.y
-            print("click down: ",self.fractal.curArray[self.curMouseX][self.curMouseY])
     
     def test(self, event):
         print("click up:  ", self.fractal.curArray[event.x][event.y])
@@ -99,9 +95,7 @@ class Application(tk.Frame):
         self.display()
     
     def mouse_event_handler(self,event,evT):
-        print(evT)        
         if evT=="b1d":
-            print("single click")
             self.singleClick = True
             self.bs.after(200,lambda : self.update_mouse(event))
         if evT=="d":
@@ -115,12 +109,7 @@ def main():
     root = tk.Tk()
     tester = Application(root,-2.2, -1.2, 1.2, 1.2, 600, 50)
     root.mainloop()
-    #tester.translate(-0.75,-0.75)
-    #tester.display()
-    #tester.zoom(0.5)
-    #tester.display()
-    
 
-    
-main()
+if __name__ == "__main__": 
+    main()
         

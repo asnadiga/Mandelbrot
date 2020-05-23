@@ -30,21 +30,12 @@ class Mandelbrot:
         a = self.curArray
         z = a
         numIter = np.ones(self.curArray.shape)
-        #timeTesting = 0
-        #timeIterating = 0
         
         for i in range(self.MAXITERATIONS):
-        #    temp = time.time()
             b = ne.evaluate("abs(z).real<4").astype(int)
-        #    timeTesting += (time.time()-temp)
-            
-            numIter = numIter + b
-            
-        #    temp = time.time()        
+            numIter = numIter + b    
             z = np.where(b==1, ne.evaluate("z*z+a"), z) 
-        #   timeIterating += (time.time() - temp)       
         
-        #print("NEWTime spent testing:  ", timeTesting, "\nNEWTime spent iterating:   ", timeIterating)
         return numIter
     
   

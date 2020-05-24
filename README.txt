@@ -6,7 +6,9 @@ navigate to this location and run
 
 ##Running the App
 to start, run:
-    python (or python3 or py or whatever) Application.py
+    python (or python3 or py or whatever) Application.py 
+        OR
+    python3 Application.py <float minX> <float minY> <float maxX> <float maxY> <int resolution> <int max iterations>
 
 
 ##Controls

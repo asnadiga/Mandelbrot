@@ -7,8 +7,7 @@ from Mandelbrot import Mandelbrot
 import numpy as np
 from PIL import Image, ImageTk
 import tkinter as tk
-import time
-from PIL.ImageTk import PhotoImage
+import sys
 
 
 class Application(tk.Frame):
@@ -173,8 +172,14 @@ class Application(tk.Frame):
         popup.destroy()
 def main():
     root = tk.Tk()
-    tester = Application(root,0,0,16,9,1000)
-    root.mainloop()
+    if len(sys.argv) == 1:
+        tester = Application(root)
+        root.mainloop()
+    elif len(sys.argv) != 7:
+        print("please enter something in the form of: \n python3 Application.py <minX> <minY> <maxX> <maxY> <int resolution> <int MaxIterations>")
+    else:
+        tester = Application(root, float(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3]), float(sys.argv[4]), int(sys.argv[5]), int(sys.argv[6]))
+        root.mainloop()
 
 if __name__ == "__main__": 
     main()

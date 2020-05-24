@@ -94,7 +94,7 @@ class Application(tk.Frame):
         if algorithm == "Glow":
             dispArray = fractal.glow_iterations()
             at = np.transpose(dispArray)
-            pic =  Image.fromarray((225*at/2).astype(np.uint8))
+            pic =  Image.fromarray((225*at/2))
             return pic
 
     
@@ -173,7 +173,7 @@ class Application(tk.Frame):
         popup.destroy()
 def main():
     root = tk.Tk()
-    tester = Application(root)
+    tester = Application(root,0,0,16,9,1000)
     root.mainloop()
 
 if __name__ == "__main__": 

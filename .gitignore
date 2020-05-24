@@ -2,3 +2,7 @@ __pycache__/
 .project
 .pydevproject
 *.jpeg
+*.tif
+*.png
+*.jpg
+*.gif

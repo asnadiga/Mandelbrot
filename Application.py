@@ -8,6 +8,7 @@ import numpy as np
 from PIL import Image, ImageTk
 import tkinter as tk
 import time
+from PIL.ImageTk import PhotoImage
 
 
 class Application(tk.Frame):
@@ -59,7 +60,7 @@ class Application(tk.Frame):
         self.colorOption.pack(side="left")
         self.saveButton.pack(side="right")
         
-        pic = self.get_image(self.colorAlg.get())
+        pic = ImageTk.PhotoImage(self.get_image(self.colorAlg.get()))
         
         if self.img == None:
             self.img = tk.Label(image = pic, master = self.imgFrame)
@@ -76,23 +77,24 @@ class Application(tk.Frame):
         
 
     
-    def get_image(self, algorithm):
+    def get_image(self, algorithm, fractal = None):
+        if fractal == None:
+            fractal = self.fractal
         if ((algorithm == "Smoothed") or (algorithm == "Select Coloring Algorithm")):
-            dispArray = self.fractal.iterations()
+            dispArray = fractal.iterations()
             at = np.transpose(dispArray)
-            pic =  ImageTk.PhotoImage(Image.fromarray((225*(at+1-np.log(np.log2(at+0.1))))/self.fractal.MAXITERATIONS))
+            pic =  Image.fromarray((225*(at+1-np.log(np.log2(at+0.1))))/fractal.MAXITERATIONS)
             return pic
         if algorithm == "Normal":
-            dispArray = self.fractal.iterations()
+            dispArray = fractal.iterations()
             at = np.transpose(dispArray)
-            pic =  ImageTk.PhotoImage(Image.fromarray((225*at/self.fractal.MAXITERATIONS)))
+            pic =  Image.fromarray((225*at/fractal.MAXITERATIONS))
             return pic
 
         if algorithm == "Glow":
-            dispArray = self.fractal.glow_iterations()
-            print(dispArray[0][0], dispArray[300][150])
+            dispArray = fractal.glow_iterations()
             at = np.transpose(dispArray)
-            pic =  ImageTk.PhotoImage(Image.fromarray((225*at/2+0.0001)))
+            pic =  Image.fromarray((225*at/2).astype(np.uint8))
             return pic
 
     
@@ -148,20 +150,25 @@ class Application(tk.Frame):
         extEntry = tk.Entry(master = popup)
         extEntry.grid(row = 2, column = 1)
         
+        algLab = tk.Label(master = popup, text = "Coloring Algorithm")
+        algLab.grid(row=3, column = 0)
+        alg = tk.StringVar(popup)
+        alg.set("Normal")
+        algChoice = tk.OptionMenu(popup, alg, "Normal", "Smoothed", "Glow")
+        algChoice.grid(row=3, column = 1)
+        
+        
         saveBut = tk.Button(master = popup, text = "Save", 
-                            command = lambda : self.save(popup, int(iterEntry.get()), int(resEntry.get()), extEntry.get()))
-        saveBut.grid(row=3, column = 1)
+                            command = lambda : self.save(popup, alg.get(), int(iterEntry.get()), int(resEntry.get()), extEntry.get()))
+        saveBut.grid(row=4, column = 1)
         popup.mainloop()
     
     
-    def save(self, popup, iter, res, name):
+    def save(self, popup, alg, iter, res, name):
         saveFrac = Mandelbrot(self.fractal.minX, self.fractal.minY, self.fractal.maxX, self.fractal.maxY, 
                               res, iter)
-        
-        dispArray = saveFrac.iterations()
-        at = np.transpose(dispArray)
-        pic = Image.fromarray(((225*(at+1-np.log(np.log2(at+0.00000001))))/self.fractal.MAXITERATIONS).astype(np.uint8))
-        pic.convert('RGB')
+        pic = self.get_image(alg, saveFrac)
+        pic = pic.convert('RGB')
         pic.save(name)
         popup.destroy()
 def main():

@@ -5,6 +5,8 @@ Created on May 15, 2020
 '''
 import numpy as np
 import numexpr as ne
+from _tracemalloc import start
+import time
 
 class Mandelbrot:
 
@@ -32,11 +34,24 @@ class Mandelbrot:
         numIter = np.ones(self.curArray.shape)
         
         for i in range(self.MAXITERATIONS):
-            b = ne.evaluate("abs(z).real<4").astype(int)
+            b = ne.evaluate("abs(z).real<2").astype(int)
             numIter = numIter + b    
             z = np.where(b==1, ne.evaluate("z*z+a"), z) 
         
         return numIter
+    
+    
+    def glow_iterations(self):
+        a = self.curArray
+        z = a
+        minNorm = abs(z)
+        
+        for i in range(self.MAXITERATIONS):
+            b = ne.evaluate("abs(z).real<2").astype(int)    
+            z = np.where(b==1, ne.evaluate("z*z+a"), z) 
+            minNorm = np.where(b==1, np.where(abs(z)<minNorm, abs(z), minNorm), minNorm)
+        
+        return minNorm
     
   
     def translate(self, transX, transY):
@@ -55,4 +70,5 @@ class Mandelbrot:
         self.maxX = self.curArray[self.curArray.shape[0]-1][self.curArray.shape[1]-1].real
         self.minY = self.curArray[self.curArray.shape[0]-1][self.curArray.shape[1]-1].imag
         self.maxY = self.curArray[0][0].imag
-        
+    
+    

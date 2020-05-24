@@ -7,11 +7,12 @@ from Mandelbrot import Mandelbrot
 import numpy as np
 from PIL import Image, ImageTk
 import tkinter as tk
+import time
 
 
 class Application(tk.Frame):
     
-    def __init__(self, master, minX, minY, maxX, maxY, RES, MAXITERATIONS):
+    def __init__(self, master, minX = -2.2, minY = -1.2, maxX = 1.2, maxY = 1.2, RES = 600, MAXITERATIONS=50):
         
         tk.Frame.__init__(self, master)
         self.master = master
@@ -25,6 +26,7 @@ class Application(tk.Frame):
         self.ctrlFrame = tk.Frame(self, height = 40, width = RES)
         self.zoomInButton = tk.Button(self.ctrlFrame,text = "zoom in", command = lambda : self.zoom(2))
         self.zoomOutButton = tk.Button(self.ctrlFrame,text = "zoom out", command = lambda : self.zoom(0.5))
+        self.saveButton = tk.Button(self.ctrlFrame, text = "save", command = self.save_popup)
 
         self.curMouseX = 0
         self.curMouseY = 0
@@ -35,24 +37,30 @@ class Application(tk.Frame):
         self.iterBut = tk.Button(master = self.ctrlFrame, text = "Apply", command = self.update_iterations)
         self.bs = tk.Frame(self)
 
+        self.colorAlg = tk.StringVar(self)
+        self.colorAlg.set("Select Coloring Algorithm") 
+        self.colorAlg.trace_add('write', lambda x,y,z: self.display())
+        self.colorOption = tk.OptionMenu(self.ctrlFrame, self.colorAlg, "Normal", "Smoothed", "Glow")
+
         self.display()
         
     
         
     def display(self):
         self.master.title("Mandelbrot")
-        self.pack(fill="both", expand=1)
+        self.pack(fill="both", expand=0)
         
-        self.imgFrame.pack()
+        self.imgFrame.pack(expand=0)
 
-        self.ctrlFrame.pack()
+        self.ctrlFrame.pack(expand=0)
         self.iterLab.pack(side="left")
         self.iterEnt.pack(side="left")
         self.iterBut.pack(side="left")
+        self.colorOption.pack(side="left")
+        self.saveButton.pack(side="right")
         
-        dispArray = self.fractal.iterations()
-        at = np.transpose(dispArray)
-        pic =  ImageTk.PhotoImage(Image.fromarray((255*(self.fractal.MAXITERATIONS-at)/self.fractal.MAXITERATIONS)))
+        pic = self.get_image(self.colorAlg.get())
+        
         if self.img == None:
             self.img = tk.Label(image = pic, master = self.imgFrame)
             self.img.image = pic
@@ -64,10 +72,29 @@ class Application(tk.Frame):
         else:
             self.img.config(image = pic)
             self.img.image = pic
-        self.img.pack(anchor="nw", fill="both", expand=1)
-
-
+        self.img.pack(anchor="nw", fill="both", expand=0)
         
+
+    
+    def get_image(self, algorithm):
+        if ((algorithm == "Smoothed") or (algorithm == "Select Coloring Algorithm")):
+            dispArray = self.fractal.iterations()
+            at = np.transpose(dispArray)
+            pic =  ImageTk.PhotoImage(Image.fromarray((225*(at+1-np.log(np.log2(at+0.1))))/self.fractal.MAXITERATIONS))
+            return pic
+        if algorithm == "Normal":
+            dispArray = self.fractal.iterations()
+            at = np.transpose(dispArray)
+            pic =  ImageTk.PhotoImage(Image.fromarray((225*at/self.fractal.MAXITERATIONS)))
+            return pic
+
+        if algorithm == "Glow":
+            dispArray = self.fractal.glow_iterations()
+            print(dispArray[0][0], dispArray[300][150])
+            at = np.transpose(dispArray)
+            pic =  ImageTk.PhotoImage(Image.fromarray((225*at/2+0.0001)))
+            return pic
+
     
     def translate(self, event):
         if self.singleClick:
@@ -102,9 +129,44 @@ class Application(tk.Frame):
             self.bs.after(200, lambda : self.translate(event))
             
            
+    def save_popup(self):
+        popup = tk.Tk()
+        popup.title("Save")
+        
+        iterLab = tk.Label(master = popup, text = "Max Number of Iterations: ")
+        iterLab.grid(row=0, column=0)
+        iterEntry = tk.Entry(master = popup)
+        iterEntry.grid(row=0, column=1)
+        
+        resLab = tk.Label(master = popup, text = "Resolution (number of pixels in x direction): ")
+        resLab.grid(row = 1, column = 0)
+        resEntry = tk.Entry(master = popup)
+        resEntry.grid(row = 1, column = 1)
+        
+        extLab = tk.Label(master = popup, text = "<name>.<extension>")
+        extLab.grid(row=2, column = 0)
+        extEntry = tk.Entry(master = popup)
+        extEntry.grid(row = 2, column = 1)
+        
+        saveBut = tk.Button(master = popup, text = "Save", 
+                            command = lambda : self.save(popup, int(iterEntry.get()), int(resEntry.get()), extEntry.get()))
+        saveBut.grid(row=3, column = 1)
+        popup.mainloop()
+    
+    
+    def save(self, popup, iter, res, name):
+        saveFrac = Mandelbrot(self.fractal.minX, self.fractal.minY, self.fractal.maxX, self.fractal.maxY, 
+                              res, iter)
+        
+        dispArray = saveFrac.iterations()
+        at = np.transpose(dispArray)
+        pic = Image.fromarray(((225*(at+1-np.log(np.log2(at+0.00000001))))/self.fractal.MAXITERATIONS).astype(np.uint8))
+        pic.convert('RGB')
+        pic.save(name)
+        popup.destroy()
 def main():
     root = tk.Tk()
-    tester = Application(root,-2.2, -1.2, 1.2, 1.2, 600, 50)
+    tester = Application(root)
     root.mainloop()
 
 if __name__ == "__main__": 

@@ -1,5 +1,7 @@
 #Mandelbrot Set Viewer
 
+There is also a .exe that should work as a standalone program. 
+
 ##Installation
 navigate to this location and run
     pip install -r requirements.txt

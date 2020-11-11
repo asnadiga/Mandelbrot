@@ -41,6 +41,7 @@ class Application(tk.Frame):
         self.learnMenu.add_command(label="Mandelbrot Set - Wikipedia", command = lambda : webbrowser.open("https://en.wikipedia.org/wiki/Mandelbrot_set", new = 2))
         self.learnMenu.add_command(label="Someone who did this better than me", command = lambda : webbrowser.open("http://davidbau.com/mandelbrot/"))
         self.learnMenu.add_command(label="My personal website", command = lambda : webbrowser.open("https://asnadiga.github.io", new = 2))
+        self.learnMenu.add_command(label="The most imformative source", command = lambda : webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", new = 2))
         self.menubar.add_cascade(label="Learn More", menu=self.learnMenu)
 
         self.saveMenu = tk.Menu(self.master, tearoff=0)

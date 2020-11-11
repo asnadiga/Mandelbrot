@@ -4,21 +4,17 @@
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\__init__.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.six',
+  ('pkg_resources._vendor.packaging.markers',
    'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\six.py',
-   'PYMODULE'),
-  ('struct',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\struct.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__init__.py',
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\markers.py',
    'PYMODULE'),
   ('pkg_resources._vendor.packaging.version',
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\version.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.__about__',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__about__.py',
    'PYMODULE'),
   ('pkg_resources._vendor.pyparsing',
    'c:\\users\\aniruddha '
@@ -832,6 +828,10 @@
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\_compat_pickle.py',
    'PYMODULE'),
+  ('struct',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\struct.py',
+   'PYMODULE'),
   ('random',
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\random.py',
@@ -968,6 +968,26 @@
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\string.py',
    'PYMODULE'),
+  ('pkg_resources._vendor.packaging._compat',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_compat.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.requirements',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\requirements.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.six',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\six.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__init__.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\__init__.py',
+   'PYMODULE'),
   ('pkg_resources._vendor.packaging.utils',
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\utils.py',
@@ -976,33 +996,13 @@
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\specifiers.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.packaging.requirements',
+  ('pkg_resources._vendor.appdirs',
    'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\requirements.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.markers',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\markers.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\__init__.py',
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\appdirs.py',
    'PYMODULE'),
   ('pkg_resources._vendor.packaging._structures',
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_structures.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging._compat',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_compat.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.__about__',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__about__.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.appdirs',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\appdirs.py',
    'PYMODULE'),
   ('sysconfig',
    'c:\\users\\aniruddha '
@@ -1092,13 +1092,13 @@
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\__future__.py',
    'PYMODULE'),
-  ('stringprep',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\stringprep.py',
-   'PYMODULE'),
   ('_py_abc',
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\_py_abc.py',
+   'PYMODULE'),
+  ('stringprep',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\stringprep.py',
    'PYMODULE'),
   ('webbrowser',
    'c:\\users\\aniruddha '
@@ -1120,121 +1120,69 @@
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\Image.py',
    'PYMODULE'),
-  ('PIL.FitsStubImagePlugin',
+  ('PIL.IcoImagePlugin',
    'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\FitsStubImagePlugin.py',
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\IcoImagePlugin.py',
    'PYMODULE'),
   ('PIL.ImageFile',
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\ImageFile.py',
    'PYMODULE'),
-  ('PIL.XbmImagePlugin',
+  ('PIL.XVThumbImagePlugin',
    'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\XbmImagePlugin.py',
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\XVThumbImagePlugin.py',
    'PYMODULE'),
-  ('PIL.ImtImagePlugin',
+  ('PIL.BlpImagePlugin',
    'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\ImtImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.TgaImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\TgaImagePlugin.py',
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\BlpImagePlugin.py',
    'PYMODULE'),
   ('PIL.CurImagePlugin',
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\CurImagePlugin.py',
    'PYMODULE'),
-  ('PIL.SunImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\SunImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.IptcImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\IptcImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.EpsImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\EpsImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.XVThumbImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\XVThumbImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.MpoImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\MpoImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.Hdf5StubImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\Hdf5StubImagePlugin.py',
-   'PYMODULE'),
   ('PIL.PcdImagePlugin',
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\PcdImagePlugin.py',
    'PYMODULE'),
-  ('PIL.IcnsImagePlugin',
+  ('PIL.TgaImagePlugin',
    'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\IcnsImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.MspImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\MspImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.IcoImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\IcoImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.DdsImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\DdsImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.BufrStubImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\BufrStubImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.SgiImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\SgiImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.MpegImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\MpegImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.WebPImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\WebPImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.SpiderImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\SpiderImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.McIdasImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\McIdasImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.Jpeg2KImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\Jpeg2KImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.XpmImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\XpmImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.FpxImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\FpxImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.GribStubImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\GribStubImagePlugin.py',
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\TgaImagePlugin.py',
    'PYMODULE'),
   ('PIL.FtexImagePlugin',
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\FtexImagePlugin.py',
    'PYMODULE'),
+  ('PIL.McIdasImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\McIdasImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.GribStubImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\GribStubImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.XbmImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\XbmImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PixarImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\PixarImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.WmfImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\WmfImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.MspImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\MspImagePlugin.py',
+   'PYMODULE'),
   ('PIL.PcxImagePlugin',
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\PcxImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.WebPImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\WebPImagePlugin.py',
    'PYMODULE'),
   ('PIL.ImImagePlugin',
    'c:\\users\\aniruddha '
@@ -1244,25 +1192,13 @@
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\PalmImagePlugin.py',
    'PYMODULE'),
-  ('PIL.BlpImagePlugin',
+  ('PIL.EpsImagePlugin',
    'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\BlpImagePlugin.py',
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\EpsImagePlugin.py',
    'PYMODULE'),
-  ('PIL.WmfImagePlugin',
+  ('PIL.SgiImagePlugin',
    'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\WmfImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.FliImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\FliImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.MicImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\MicImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.PixarImagePlugin',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\PixarImagePlugin.py',
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\SgiImagePlugin.py',
    'PYMODULE'),
   ('PIL.PdfImagePlugin',
    'c:\\users\\aniruddha '
@@ -1276,17 +1212,81 @@
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\ImageSequence.py',
    'PYMODULE'),
-  ('PIL.GbrImagePlugin',
+  ('PIL.DdsImagePlugin',
    'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\GbrImagePlugin.py',
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\DdsImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.XpmImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\XpmImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.FpxImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\FpxImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.DcxImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\DcxImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.Jpeg2KImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\Jpeg2KImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.MicImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\MicImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.IptcImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\IptcImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.FitsStubImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\FitsStubImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.Hdf5StubImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\Hdf5StubImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.IcnsImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\IcnsImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.FliImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\FliImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.SunImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\SunImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.MpoImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\MpoImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.SpiderImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\SpiderImagePlugin.py',
    'PYMODULE'),
   ('PIL.PsdImagePlugin',
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\PsdImagePlugin.py',
    'PYMODULE'),
-  ('PIL.DcxImagePlugin',
+  ('PIL.ImtImagePlugin',
    'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\DcxImagePlugin.py',
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\ImtImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.GbrImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\GbrImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.BufrStubImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\BufrStubImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.MpegImagePlugin',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PIL\\MpegImagePlugin.py',
    'PYMODULE'),
   ('PIL.TiffImagePlugin',
    'c:\\users\\aniruddha '
@@ -1576,13 +1576,13 @@
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\__init__.py',
    'PYMODULE'),
-  ('setuptools._vendor.packaging',
+  ('setuptools._vendor.packaging.version',
    'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__init__.py',
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\version.py',
    'PYMODULE'),
-  ('setuptools._vendor.six',
+  ('setuptools._vendor.packaging.specifiers',
    'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\six.py',
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\specifiers.py',
    'PYMODULE'),
   ('setuptools._vendor.packaging._structures',
    'c:\\users\\aniruddha '
@@ -1592,37 +1592,37 @@
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__about__.py',
    'PYMODULE'),
+  ('setuptools._vendor.packaging.markers',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\markers.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging.utils',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\utils.py',
+   'PYMODULE'),
   ('setuptools._vendor.pyparsing',
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\pyparsing.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging.version',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\version.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging.specifiers',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\specifiers.py',
    'PYMODULE'),
   ('setuptools._vendor.packaging.requirements',
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\requirements.py',
    'PYMODULE'),
-  ('setuptools._vendor.packaging._compat',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_compat.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging.markers',
-   'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\markers.py',
-   'PYMODULE'),
   ('setuptools._vendor',
    'c:\\users\\aniruddha '
    'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\__init__.py',
    'PYMODULE'),
-  ('setuptools._vendor.packaging.utils',
+  ('setuptools._vendor.six',
    'c:\\users\\aniruddha '
-   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\utils.py',
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\six.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__init__.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging._compat',
+   'c:\\users\\aniruddha '
+   'nadiga\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_compat.py',
    'PYMODULE'),
   ('setuptools.msvc',
    'c:\\users\\aniruddha '

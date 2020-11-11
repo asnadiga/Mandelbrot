@@ -20,7 +20,7 @@ to start, run:
     
     When very zoom out the number of iterations needed to generate a decent image is low, the default number of iterations is 50.
     To sharpen the picture after zooming in, enter a higher value for Max Number of Iterations and click apply.
-    Increasing Max Number of Iterations will decrease performance
+    Increasing Max Number of Iterations will decrease performance.
 
 ##Things to come in the future
 1. Comments in the code hopefully

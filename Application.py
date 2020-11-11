@@ -8,17 +8,56 @@ import numpy as np
 from PIL import Image, ImageTk
 import tkinter as tk
 import sys
+import webbrowser
+
 
 
 class Application(tk.Frame):
     
-    def __init__(self, master, minX = -2.2, minY = -1.2, maxX = 1.2, maxY = 1.2, RES = 600, MAXITERATIONS=50):
+    def __init__(self, master, minX = -2.2, minY = -1.2, maxX = 1.2, maxY = 1.2, RES = 600, MAXITERATIONS = 50):
         
         tk.Frame.__init__(self, master)
         self.master = master
+
+        self.origMinX = minX
+        self.origMinY = minY
+        self.origMaxX = maxX
+        self.origMaxY = maxY
+        self.origRES = RES
+        self.origMAXITERATIONS = MAXITERATIONS
         
         self.fractal = Mandelbrot(minX, minY, maxX, maxY, RES, MAXITERATIONS)
         
+        self.menubar = tk.Menu(self.master)
+        
+        self.fileMenu = tk.Menu(self.master, tearoff=0)
+        self.fileMenu.add_command(label="Quit", command = self.master.destroy)
+        self.fileMenu.add_command(label="Reset to default", command = self.reset)
+
+        self.menubar.add_cascade(label="File", menu=self.fileMenu)
+
+
+        self.learnMenu = tk.Menu(self.menubar, tearoff=0)
+        self.learnMenu.add_command(label="Mandelbrot Set - Wikipedia", command = lambda : webbrowser.open("https://en.wikipedia.org/wiki/Mandelbrot_set", new = 2))
+        self.learnMenu.add_command(label="Someone who did this better than me", command = lambda : webbrowser.open("http://davidbau.com/mandelbrot/"))
+        self.learnMenu.add_command(label="My personal website", command = lambda : webbrowser.open("https://asnadiga.github.io", new = 2))
+        self.menubar.add_cascade(label="Learn More", menu=self.learnMenu)
+
+        self.saveMenu = tk.Menu(self.master, tearoff=0)
+        self.saveMenu.add_command(label="Save", command = self.save_popup)
+        self.menubar.add_cascade(label="Save", menu=self.saveMenu)
+
+        self.helpMenu = tk.Menu(self.menubar, tearoff=0)
+        self.helpMenu.add_command(label="Help", command = self.help_popup)
+        self.menubar.add_cascade(label="Help", menu=self.helpMenu)
+
+
+        self.master.config(menu=self.menubar)
+
+
+
+
+
         self.imgFrame = tk.Frame(self, bg = "green", height = int((maxY-minY)/(maxX-minX)*RES), width = RES)
         self.img = None
         
@@ -26,7 +65,6 @@ class Application(tk.Frame):
         self.ctrlFrame = tk.Frame(self, height = 40, width = RES)
         self.zoomInButton = tk.Button(self.ctrlFrame,text = "zoom in", command = lambda : self.zoom(2))
         self.zoomOutButton = tk.Button(self.ctrlFrame,text = "zoom out", command = lambda : self.zoom(0.5))
-        self.saveButton = tk.Button(self.ctrlFrame, text = "save", command = self.save_popup)
 
         self.curMouseX = 0
         self.curMouseY = 0
@@ -34,11 +72,13 @@ class Application(tk.Frame):
         
         self.iterLab = tk.Label(master = self.ctrlFrame, text = "Max Number of Iterations:")
         self.iterEnt = tk.Entry(master = self.ctrlFrame)
+        self.iterEnt.insert(0, str(MAXITERATIONS))
         self.iterBut = tk.Button(master = self.ctrlFrame, text = "Apply", command = self.update_iterations)
         self.bs = tk.Frame(self)
 
+        self.colorLab = tk.Label(master = self.ctrlFrame, text = "Coloring Algorithm:")
         self.colorAlg = tk.StringVar(self)
-        self.colorAlg.set("Select Coloring Algorithm") 
+        self.colorAlg.set("Normal") 
         self.colorAlg.trace_add('write', lambda x,y,z: self.display())
         self.colorOption = tk.OptionMenu(self.ctrlFrame, self.colorAlg, "Normal", "Smoothed", "Glow")
 
@@ -49,6 +89,8 @@ class Application(tk.Frame):
     def display(self):
         self.master.title("Mandelbrot")
         self.pack(fill="both", expand=0)
+
+
         
         self.imgFrame.pack(expand=0)
 
@@ -56,8 +98,8 @@ class Application(tk.Frame):
         self.iterLab.pack(side="left")
         self.iterEnt.pack(side="left")
         self.iterBut.pack(side="left")
+        self.colorLab.pack(side="left")
         self.colorOption.pack(side="left")
-        self.saveButton.pack(side="right")
         
         pic = ImageTk.PhotoImage(self.get_image(self.colorAlg.get()))
         
@@ -128,7 +170,25 @@ class Application(tk.Frame):
             self.zoom(2,event.x,event.y)
         if evT == "b1u":
             self.bs.after(200, lambda : self.translate(event))
-            
+
+
+    def help_popup(self):
+        popup = tk.Tk()
+        popup.title("Help")
+
+        txt = tk.Text(master = popup)
+        txt.grid(row=1, column=0, padx=10, pady=10, sticky="NSEW")
+        popup.columnconfigure(0, weight=1)
+        popup.rowconfigure(1, weight=1)
+
+        txt.insert(tk.END, open("helpText.txt").read())
+        popup.mainloop()
+
+    
+    def reset(self):
+        self.fractal = Mandelbrot(self.origMinX, self.origMinY, self.origMaxX, self.origMaxY, self.origRES, self.origMAXITERATIONS)
+        self.display()
+
            
     def save_popup(self):
         popup = tk.Tk()
@@ -170,6 +230,10 @@ class Application(tk.Frame):
         pic = pic.convert('RGB')
         pic.save(name)
         popup.destroy()
+
+
+
+
 def main():
     root = tk.Tk()
     if len(sys.argv) == 1:

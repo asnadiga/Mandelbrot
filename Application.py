@@ -73,6 +73,7 @@ class Application(tk.Frame):
         
         self.iterLab = tk.Label(master = self.ctrlFrame, text = "Max Number of Iterations:")
         self.iterEnt = tk.Entry(master = self.ctrlFrame)
+        self.iterEnt.bind('<Return>', lambda x : self.update_iterations())
         self.iterEnt.insert(0, str(MAXITERATIONS))
         self.iterBut = tk.Button(master = self.ctrlFrame, text = "Apply", command = self.update_iterations)
         self.bs = tk.Frame(self)
